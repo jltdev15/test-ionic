@@ -5,19 +5,23 @@ import TabsPage from '../views/TabsPage.vue'
 const routes = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+         component: () => import('@/views/StartUpPage.vue')
   },
   {
-    path: '/tabs/',
+    path: '/login',
+         component: () => import('@/views/LoginPage.vue')
+  },
+  {
+    path: '/registration',
+         component: () => import('@/views/LoginPage.vue')
+  },
+  {
+    path: '/dashboard',
     component: TabsPage,
     children: [
       {
-        path: '',
-        redirect: '/tabs/tab1'
-      },
-      {
-        path: 'tab1',
-        component: () => import('@/views/Tab1Page.vue')
+        path: '/',
+        component: () => import('@/views/DashBoardPage.vue')
       },
       {
         path: 'tab2',
